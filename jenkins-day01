@@ -1,0 +1,13 @@
+ 1    sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    2    sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+    3  ls /etc/yum.repos.d/
+    4    yum install fontconfig java-11-openjdk -y
+    5   sudo amazon-linux-extras install java-openjdk11
+    6   yum install jenkins -y
+    7  systemctl start jenkins.service
+    8  systemctl status jenkins.service
+    9  cat /var/lib/jenkins/secrets/initialAdminPassword
+   10  yum install git -y
+   11  cd /var/lib/jenkins/workspace/job1
+   12  ll
+   13  history
