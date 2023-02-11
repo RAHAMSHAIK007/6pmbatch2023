@@ -1,0 +1,54 @@
+MASTER:
+
+  61  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+   62    sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+   63
+   64  amazon-linux-extras install epel -y
+   65  amazon-linux-extras install java-openjdk11 -y
+   66  yum install git maven jenkins -y
+   67  systemctl start jenkins.service
+   68  systemctl status jenkins.service
+   69  cat /var/lib/jenkins/secrets/initialAdminPassword
+   70  useradd jenkins
+   71  passwd jenkins
+   72  visudo
+   73  vim /etc/ssh/sshd_config
+   74  systemctl restart sshd
+   75  systemctl status sshd
+   76  su - jenkins
+   77  hostnamectl set-hostname master
+   78  sudo -i
+   79  su - jenkins
+   80  ssh-keygen
+   81  ls -al
+   82  cd .ssh/
+   83  ll
+   84  cat id_rsa
+   85  ll
+   86  cat authorized_keys
+   87  cd
+   88  ssh-copy-id jenkins@172.31.63.97
+   89  ssh 'jenkins@172.31.63.97'
+   90  cd  /var/lib/jenkins/workspace/job1
+
+===============================================
+
+slave-1:
+  1  useradd jenkins
+    2  passwd jenkins
+    3  visudo
+    4  vim /etc/ssh/sshd_config
+    5  systemctl restart sshd
+    6  systemctl status sshd
+    7  amazon-linux-extras install java-openjdk11 -y
+    8  hostname -i
+    9  cd /tmp/
+   10  ll
+   11  cd workspace/
+   12  cd job1/
+   13  ll
+   14  git -v
+   15  yum install git -y
+   16  ll
+   17  cd
+   18  history
