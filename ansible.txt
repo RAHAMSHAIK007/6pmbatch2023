@@ -1,0 +1,24 @@
+FRIST 4 COMMANS ARE ANSIBLE MAIN SERVER COMMANDS:    
+
+    1  sudo amazon-linux-extras install ansible2 -y
+    2  yum install python python-pip python-level openssl -y
+    3  vim /etc/ansible/hosts
+    4  vim /etc/ansible/ansible.cfg
+
+ALL 6 COMMANDS EXECUTE ON ALL SERVERS COMMNLY
+
+    5  useradd ansible
+    6  passwd ansible
+    7  visudo
+    8  vim /etc/ssh/sshd_config
+    9  systemctl restart sshd
+   10  systemctl status sshd
+
+LOGIN TO ANSIBLE USER ON MAIN SERVER
+su - ansible
+ssh-keygen -- > 4 times enter
+
+ssh-copy-id ansible@private-ip of node
+
+execute above command 4 times in the ansible main node
+4 times you need to change ip
