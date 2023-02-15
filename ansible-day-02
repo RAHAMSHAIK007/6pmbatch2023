@@ -1,0 +1,26 @@
+ 25  ansible all -a "ls"
+   26  ansible all -a "touch file1"
+   27  ansible all -a "ls"
+   28  ansible all -a "cat /etc/passwd"
+   29  ansible all -a "useradd raham"
+   30  ansible all -a "sudo useradd raham"
+   31  ansible all -a "cat /etc/passwd"
+   32  ansible dev -b -a "yum install tree -y"
+   33  ansible dev -b -a "yum remove tree -y"
+   34  ansible all -b -m yum -a "pkg=httpd state=present"
+   35  ansible all -ba "httpd -v"
+   36  ansible all -b -m yum -a "pkg=git state=present"
+   37  ansible all -b -m yum -a "pkg=git state=latest"
+   38  ansible all -b -m yum -a "pkg=git state=absent"
+   39  ansible all -b -m service -a "name=git state=started"
+   40  ansible all -b -m service -a "name=httpd state=started"
+   41  cd
+   42  vim .ssh/id_rsa
+   43  cat .ssh/id_rsa
+   44  ll
+   45  rm -rf raham
+   46  ll
+   47  ansible-playbook raham.yml 
+   48  ansible all -ba "yum remove httpd -y"
+   49  ansible-playbook raham.yml 
+   50  history
