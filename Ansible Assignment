@@ -1,0 +1,29 @@
+TAKE 3 GROUPS (DEV, TEST, PROD)
+EACH GROUP 2 NODES = TOTAL = 6 NODES & 1 MAIN NODE
+
+CREATE A PLAYBOOK FOLDER
+
+5 TASKS  -- > ROLES
+
+ROLE-1: CREATE 5 USERS ON ALL GROUPS
+ROLE-2: INSTALL HTTPD & RESTART ON TEST GROUP
+ROLE-3: DEPLOYMENT ON DEV & PROD SERVERS (GITHUB -- > PULL FROM PLAYBOOK) ALL GROUPS
+ROLE-4: INSTALL DOCKER ON REDHAT BY USING CONDITIONS DEV GROUP
+ROLE-5: INSTALL NUMPY & PANDAS ON ALL GROUPS
+ROLE-6: INSTALL JENKINS IN PROD SERVERS
+
+
+=========================================================================
+- hosts: all
+  become: yes
+  tasks:
+    - name: install httpd
+      command: yum install httpd -y
+
+    - name: start service
+      command: systemctl start httpd
+
+    - name: copying the code
+      copy:
+        src: "index.html"
+        dest: "/var/www/html/"
