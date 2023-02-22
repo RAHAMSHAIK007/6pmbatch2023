@@ -1,0 +1,37 @@
+ 1  yum install docker -y
+    2  docker --version
+    3  docker version
+    4  systemctl start docker.service
+    5  service docker status
+    6  docker version
+    7  docker images
+    8  docker search ubuntu
+    9  docker pull ubuntu
+   10  docker images
+   11  df -h
+   12  docker pull RedHat
+   13  docker pull redhat
+   14  docker images
+   15  docker run ubuntu
+   16  docker container ls
+   17  docker container ls -a
+   18  docker run --name raham ubuntu
+   19  docker container ls -a
+   20  docker run -it --name raham1 ubuntu
+   21  docker ps -a
+   22  docker images
+   23  docker commit raham1 abc
+   24  docker images
+   25  docker run -it --name raham2 abc
+   26  docker diff raham1
+   27  docker ps -a
+   28  docker start raham2
+   29  docker ps -a
+   30  docker attach raham2
+   31  docker ps -a
+   32  docker start raham2
+   33  docker ps -a
+   34  docker stop raham2
+   35  docker ps -a
+   36  docker info
+   37  history
