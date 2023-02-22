@@ -18,6 +18,26 @@
    18  docker run --name raham ubuntu
    19  docker container ls -a
    20  docker run -it --name raham1 ubuntu
+   ===================================================================================================================================================================
+    1  cat /etc/os-release
+    2  apt install git -y
+    3  sudo apt install git -y
+    4  apt-get install git -y
+    5  apt update -y
+    6  apt install git -y
+    7  cd /tmp/
+    8  touch file1
+    9  cat>file1
+   10  cat file1
+   11  apt install apache2 -y
+   12  apt install default-jdk -y
+   13  apt-get install mysql-server -y
+   14  apache2 -version
+   15  java -version
+   16  mysql --version
+   17  history
+
+   ==============================================================================================================================================================
    21  docker ps -a
    22  docker images
    23  docker commit raham1 abc
