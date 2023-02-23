@@ -1,0 +1,87 @@
+  1  yum install docker -y
+    2  service docker start
+    3  service docker status
+    4  vim Dockerfile
+    5  docker images
+    6  docker ps -a
+    7  docker build -t swiggy:v1 .
+    8  vim Dockerfile
+    9  docker build -t swiggy:v1 .
+   10  docker images
+   11  docker run -it --name cont1 swiggy:v1
+   12  vim Dockerfile
+   13  vim raham
+   14  ll
+   15  vim Dockerfile
+   16  docker images
+   17  docker build -t swiggy:v2
+   18  docker build -t swiggy:v2 .
+   19  docker images
+   20  docker run -it --name cont2 swiggy:v2
+   21  vim Dockerfile
+   22  docker build -t swiggy:v3
+   23  docker build -t swiggy:v3 .
+   24  docker run -d --name cont3 swiggy:v3
+   25  docker ps -a
+   26  docker start cont3
+   27  docker ps -a
+   28  docker run -d --name cont4 swiggy:v3 /bin/bash
+   29  docker ps -a
+   30  docker start cont4
+   31  docker ps -a
+   32  docker run -itd --name cont4 swiggy:v3 /bin/bash
+   33  docker run -itd --name cont5 swiggy:v3 /bin/bash
+   34  docker ps -a
+   35  docker attach cont5
+   36  docker inspect cont5
+   37  docker inspect cont5 | grep -i label
+   38  docker inspect cont5 | grep -i labels
+   39  docker inspect cont5 | grep -i email
+   40  vim Dockerfile
+   41  docker build -t swiggy:v3
+   42  docker build -t swiggy:v3 .
+   43  docker run -it --name cont6 swiggy:v3
+   44  docker inspect cont6 | grep -i 8080
+   45  docker inspect cont6 | grep -i port
+   46  docker ps -a
+   47  vim Dockerfile
+   48  cat -n Dockerfile
+   49  docker build -t swiggy:v3 .
+   50  docker run -it --name cont7 swiggy:v3
+   51  vim Dockerfile
+   52  docker build -t swiggy:v3 .
+   53  docker run -it --name cont8 swiggy:v3
+   54  vim Dockerfile
+   55  docker build -t swiggy:v3 .
+   56  docker run -it --name cont8 swiggy:v3
+   57  docker run -it --name cont9 swiggy:v3
+   58  docker images
+   59  docker tag swiggy:v3 veerabhadrassv9/abc
+   60  docker images
+   61  docker push veerabhadrassv9/abc
+   62  docker login
+   63  docker push veerabhadrassv9/abc
+   64  docker images
+   65  docker rmi veerabhadrassv9/abc
+   66  docker images
+   67  docker ps -a
+   68  docker rm cont9
+   69  docker images
+   70  docker pull veerabhadrassv9/abc
+   71  docker images
+===================================================================================================================================================================
+DOCKER FILE:
+
+FROM ubuntu
+RUN apt update -y
+RUN apt install apache2 -y
+RUN apt install default-jdk -y
+RUN apt install mysql-server -y
+WORKDIR /tmp
+COPY raham /tmp
+ADD https://dlcdn.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz /tmp
+LABEL email rahamshaik007@gmail.com
+ENV loc hyderbada
+ENV client Nareshit
+EXPOSE 8080
+ENTRYPOINT ["apt", "install", "vim", "-y"]
