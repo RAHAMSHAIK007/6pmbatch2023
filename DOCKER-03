@@ -1,0 +1,18 @@
+ 1  yum install docker -y
+    2  service docker start
+    3  service docker status
+    4  vim Dockerfile
+    5  docker build -t img:v1 .
+    6  docker images
+    7  docker run -it --name cont1 img:v1
+    8  docker ps -a
+    9  docker run -it --name cont2 --volumes-from cont1 --privileged=true ubuntu
+   10  docker run -it --name cont3 -v /vol2 ubuntu
+   11  docker run -it --name cont4 --volumes-from cont3 --privileged=true ubuntu
+   12  cd /home/ec2-user/
+   13  ll
+   14  ls -al
+   15  cat>hostfile
+   16  ll
+   17  docker run -it --name cont9 -v /home/ec2-user/:/hostvolume ubuntu
+   18  history
