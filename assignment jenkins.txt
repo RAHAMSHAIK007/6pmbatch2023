@@ -13,7 +13,7 @@ vars: build number, job name, jenkins url
 
 job-3: (slave-3) (pipeline)
 integration of git 
-op: /tmp/user-1/builds/
+op: /tmp/user-3/builds/
 parameters: choice parameters (client, env)
 vars: build number, job name, jenkins url, commit id
 
