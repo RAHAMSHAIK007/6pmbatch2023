@@ -1,0 +1,61 @@
+  1  docker swarm init --advertise-addr 172.31.13.33
+    2  docker node ls
+    3  docker service create --name swiggy --replicas 3 --publish 80:80 httpd
+    4  docker ps -a
+    5  docker service scale=6
+    6  docker service scale swiggy=6
+    7  docker ps -a
+    8  docker service scale swiggy=3
+    9  docker ps -a
+   10  docker service swiggy ps -a
+   11  docker service swiggy ps
+   12  docker service ps swiggy
+   13  docker service images swiggy
+   14  docker service image swiggy
+   15  docker service logs swiggy
+   16  docker ps -a
+   17  docker stop swiggy.1.v4m7cqb7fnxpuf41ktet30y2u
+   18  docker ps -a
+   19  docker service ls
+   20  docker service create --name zomato --replicas 5 --publish 81:80 nginx
+   21  docker service rm zomato
+   22  docker service rm swiggy
+   23  docker service ls
+   24  docker ps -a
+   25  docker network create raham
+   26  docker network ls
+   27  docker network rm raham
+   28  docker network ls
+   29  docker network create raham
+   30  docker network ls
+   31  docker inspect raham
+   32  docker run -itd --name cont1 nginx
+   33  docker ps -a
+   34  docker network connect raham cont1
+   35  docker ps -a
+   36  docker inspect cont1 | gerp -i raham
+   37  docker inspect cont1 | grep -i raham
+   38  docker inspect cont1
+   39  docker run -itd --name cont2 nginx
+   40  docker attach cont2
+   41  docker ps -a
+   42  docker start cont2
+   43  docker ps -a
+   44  docker attach cont2 sh
+   45  docker attach cont2
+   46  docker run -itd --name cont3 ubuntu
+   47  docker attach cont3
+   48  docker stop $(docker ps -a -q)
+   49  docker rm $(docker ps -a -q)
+   50  docker run -itd --rm --name cont1 busybox
+   51  docker run -itd --rm --name cont2 busybox
+   52  docker ps -a
+   53  docker run -itd --rm --name cont3 nginx
+   54  docker network ls
+   55  docker inspect cont1
+   56  docker inspect cont2
+   57  docker inspect cont3
+   58  docker inspect bridge
+   59  docker exec -it cont1 sh
+   60  docker exec -it cont2 sh
+   61  history
