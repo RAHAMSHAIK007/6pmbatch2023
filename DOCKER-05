@@ -1,0 +1,84 @@
+  1  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    2  sudo chmod +x /usr/local/bin/docker-compose
+    3  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    4  docker-compose --version
+    5  vim docker-compose.yml
+    6  docker ps -a
+    7  docker compose up -d
+    8  docker-compose up -d
+    9  ll
+   10  vim docker-compose.yml
+   11  docker-compose up -d
+   12  vim docker-compose.yml
+   13  docker-compose up -d
+   14  vim docker-compose.yml
+   15  docker-compose up -d
+   16  vim docker-compose.yml
+   17  docker-compose up -d
+   18  vim docker-compose.yml
+   19  docker-compose up -d
+   20  docker ps -a
+   21  docker run -itd --name cont1 httpd
+   22  docker run -itd --name cont2 httpd
+   23  docker run -itd --name cont3 nginx
+   24  docker ps -a
+   25  docker-compose ps -a
+   26  docker-compose images
+   27  docker-compose inspect
+   28  docker-compose ps -a
+   29  docker inspect root_delivery_1
+   30  docker system df -v
+   31  docker-compose logs
+   32  docker images
+   33  docker-compose build
+   34  docker-compose down
+   35  docker-compose up -d
+   36  docker-compose stop
+   37  docker ps -a
+   38  docker-compose start
+   39  docker ps -a
+   40  docker-compose pause
+   41  docker ps -a
+   42  docker-compose unpause
+   43  docker-compose down
+   44  ll
+   45  mv docker-compose.yml docker-compose1.yml
+   46  ll
+   47  docker-compose up -d
+   48  docker-compose -f docker-compose1.yml up -d
+   49  docker-compose -f docker-compose1.yml down -d
+   50  docker-compose ps -a
+   51  docker ps -a
+   52  docker stop $(docker ps -a -q)
+   53  docker rm $(docker ps -a -q)
+   54  docker rmi -f $(docker images -q)
+   55  docker swarm init --advertise-addr 172.31.3.75
+   56  ll
+   57  rm -rf *
+   58  curl -L https://downloads.portainer.io/ce2-16/portainer-agent-stack.yml -o portainer-agent-stack.yml
+   59  ll
+   60  vim portainer-agent-stack.yml
+   61  docker stack deploy -c portainer-agent-stack.yml dockergui
+   62  docker ps -a
+   63  docker ps
+   64  docker stack ls
+   65  docker ps
+   66  docker ps -a
+   67  docker volume ls
+   68  docker images
+   69  docker stack ls
+   70  docker stack create -c portainer-agent-stack.yml rahamgui
+   71  docker stack create portainer-agent-stack.yml rahamgui
+   72  docker stack deploy -c portainer-agent-stack.yml rahamgui
+   73  docker stack ls
+   74  docker network ls
+   75  docker ps -a
+   76  docker volume ls
+   77  docker stack ls
+   78  docker stack services dockergui
+   79  docker stack rm dockergui
+   80  docker ps
+   81  docker stack rm rahamgui
+   82  docker ps
+   83  docker stack ls
+   84  history
