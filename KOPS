@@ -1,0 +1,32 @@
+TEP-1: LAUNCH INSTANCE WITH T2.MEDIUM AND 30 GB SSD
+STEP-2: INSTALL AWS CLI
+		curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+		unzip awscliv2.zip
+		sudo ./aws/install
+
+STEP-3: INSTALL KOPS & KUBECTL
+		curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+		wget https://github.com/kubernetes/kops/releases/download/v1.24.1/kops-linux-amd64
+		PERMISSIONS: chmod +x kops-linux-amd64 kubectl
+		MOVE FILES:  mv kubectl /usr/local/bin/kubectl
+		MOVE FILES:  mv kops-linux-amd64  /usr/local/bin/kops
+		TO SEE VERSION: kubectl version & kops version
+
+TO  CHECK VERSION: /usr/local/bin/aws --version
+		TO SET PATH: vim .bashrc
+				 export PATH=$PATH:/usr/local/bin/
+				 source .bashrc
+				 aws --version
+
+STEP-4: CREATE IAM USER WITH ADMIN PERMISSIONS AND CONFIGURE IT IN ANY REGION WITH TABLE FORMAT
+
+STEP-5: CREATE INFRA SETUP
+		TO CREATE BUCKET: aws s3api create-bucket --bucket nareshit.k8s.local --region us-east-1
+		TO ENABLE VERSION: aws s3api put-bucket-versioning --bucket nareshit.k8s.local --region us-east-1 --versioning-configuration Status=Enabled
+		EXPORT CLUSTER DATA INTO BUCKET: export KOPS_STATE_STORE=s3://nareshit.k8s.local
+		
+		TO CREATE CLUSTER: kops create cluster --name nareshit.k8s.local --zones us-east-1a --master-size t2.medium --node-size t2.micro
+		TO SEE THE CLUSTER: kops get cluster
+		IF YOU WANT TO EDIT THE CLUSTER: kops edit cluster cluster_name
+		TO RUN THE CLUSTER: kops update cluster --name nareshit.k8s.local --yes --admin
+    TO DELETE CLUSTER: kops delete cluster --name rahamdevopst.k8s.local --yes
