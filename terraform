@@ -1,0 +1,87 @@
+1  aws configure
+    2  mkdir terraform
+    3  cd terraform/
+    4  vim main.tf
+    5  cat /root/.aws/config
+    6  vim main.tf
+    7  sudo yum install -y yum-utils shadow-utils
+    8  sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+    9  sudo yum -y install terraform
+   10  vim main.tf
+   11  terraform init
+   12  terraform validate
+   13  vim main.tf
+   14  terraform validate
+   15  terraform apply --auto-approve
+   16  terraform state list
+   17  cat main.tf
+   18  terraform destroy --auto-approve
+   19  ll
+   20  vim main.tf
+   21  vim provider.tf
+   22  ll
+   23  cat main.tf
+   24  cat provider.tf
+   25  cat main.tf
+   26  mkdir -p modules/instances
+   27  mkdir -p modules/buckets
+   28  yum install tree -y
+   29  tree
+   30  cat m
+   31  cat main.tf
+   32  tree
+   33  cd modules/instances/
+   34  vim main.tf
+   35  vim variable.tf
+   36  cd
+   37  cd terraform/
+   38  tree
+   39  cat m
+   40  tree
+   41  cat main.tf
+   42  cat modules/instances/main.tf
+   43  cat modules/instances/variable.tf
+   44  cat main.tf
+   45  terraform apply --auto-approve
+   46  terraform init
+   47  terraform apply --auto-approve
+   48  vim main.tf
+   49  terraform apply --auto-approve
+   50  tree
+   51  ll
+   52  rm -rf modules/ provider.tf
+   53  vim main.tf
+   54  terraform apply --auto-approve
+   55  cat main.tf
+   56  vim main.tf
+   57  terraform apply --auto-approve
+   58  vim main.tf
+   59  terraform apply --auto-approve
+   60  cat main.tf
+   61  terraform destroy --auto-approve
+   62  terraform apply --auto-approve
+   63  terraform state list
+   64  terraform refresh
+   65  terraform state list
+   66  terraform refresh
+   67  terraform destroy --auto-approve
+   68  vim main.tf
+   69  terraform apply --auto-approve
+   70  terraform state list
+   71  terraform taint
+   72  terraform state list
+   73  terraform taint aws_instance.xyz
+   74  terraform apply --auto-approve
+   75  cat terraform.tfstate
+   76  terraform refresh
+   77  cat terraform.tfstate
+   78  terraform taint list
+   79  terraform untaint
+   80  terraform state list
+   81  terraform untaint aws_instance.xyz
+   82  terraform taint aws_instance.xyz
+   83  terraform untaint aws_instance.xyz
+   84  terraform state list
+   85  terraform apply -replace="aws_instance.xyz"
+   86  ll
+   87  history
